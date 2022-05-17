@@ -4,7 +4,6 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const Prompt = require('./model/prompt')
-const Response = require('./model/response')
 const { Configuration, OpenAIApi } = require("openai");
 
 mongoose.connect('mongodb://localhost:27017/textReply')
