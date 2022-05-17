@@ -33,7 +33,7 @@ app.get('/app', async (req, res) => {
     res.render('app', { prompts })
 })
 
-app.post('/app', async (req,res) => {
+app.post('/app', async (req, res) => {
     const prompt = new Prompt(req.body.prompt);
     const question = defaultPrompt.concat(prompt.input, '\nA:')
     const completion = await openai.createCompletion("text-curie-001", {
@@ -44,7 +44,7 @@ app.post('/app', async (req,res) => {
         frequency_penalty: 0.0,
         presence_penalty: 0.0,
         stop: ["\n"],
-      });
+    });
     const answer = await completion.data.choices[0].text;
     prompt.output = answer;
     await prompt.save();
