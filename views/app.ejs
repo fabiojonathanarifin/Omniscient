@@ -24,8 +24,12 @@
                     <% for (let prompt of prompts) {%> 
                         <div class="col md-6">
                             <div class="h-100 p-5 text-white bg-dark rounded-3">
-                                <h3>Prompt</h3>
+                                <h3>Question</h3>
                                 <p> <%= prompt.input %> </p>
+                            </div>
+                            <div class="h-100 p-5 text-white bg-dark rounded-3">
+                                <h3>Answer</h3>
+                                <p> <%= prompt.output %> </p>
                             </div>
                         </div>
                     <% } %> 

@@ -3,7 +3,8 @@ const { Schema } = mongoose;
 
 
 const promptSchema = new Schema({
-    input: String
+    input: String,
+    output: String
 })
 
 const Prompt = mongoose.model('Prompt', promptSchema);
