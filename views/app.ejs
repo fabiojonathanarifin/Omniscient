@@ -13,26 +13,27 @@
             <div class="col-md-6 offset-md-3">
                 <h1>Text Reply Simulator </h1>
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="textArea" style="height: 100px"></textarea>
-                    <label class="text-muted" for="textArea">Input Prompt Here</label>
-                    </div>
-                    <div class="mt-4">
-                        <h1>Responses</h1>
+                    <form action="/app" method="POST">
+                        <label class="form-label" for="input">Prompt</label>
+                        <textarea class="form-control" name="prompt[input]" placeholder="Input Prompt Here" id="textArea" style="height: 100px"></textarea>
+                        <button class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <div class="mt-4">
+                    <h1>Responses</h1>
+                    <% for (let prompt of prompts) {%> 
                         <div class="col md-6">
                             <div class="h-100 p-5 text-white bg-dark rounded-3">
-                                <div>
-                                    <h3>Prompt</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab porro dolor quasi, dignissimos ipsam hic facilis pariatur. Ex accusantium totam tenetur quo et architecto saepe eveniet vel, unde atque?</p>
-                                </div>
-                                <div>
-                                    <h3>Responses</h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ab porro dolor quasi, dignissimos ipsam hic facilis pariatur. Ex accusantium totam tenetur quo et architecto saepe eveniet vel, unde atque?</p>
-                                </div>
+                                <h3>Prompt</h3>
+                                <p> <%= prompt.input %> </p>
                             </div>
                         </div>
-                    </div>
+                    <% } %> 
+                </div>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
