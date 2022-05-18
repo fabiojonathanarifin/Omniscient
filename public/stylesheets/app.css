@@ -7,22 +7,14 @@ body {
     font-weight: 'Medium';
 }
 
-
-/* .brn-font {
-    background: linear-gradient(-45deg,
-            rgb(70, 161, 165),
-            rgb(99, 120, 121),
-            rgb(83, 141, 113));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-} */
-
+/* Delete blue borders on-click for the text area */
 .form-control:focus {
     border-color: #cccccc;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
+/* Text gradient */
 .brn-font {
     background: linear-gradient(-45deg,
             rgb(97, 190, 216),
@@ -63,6 +55,7 @@ input[type="text"],
 
 }
 
+/* Answer/Knowledge card */
 .card {
     background: linear-gradient(-45deg, #2e3031, #222425);
     background-size: 400% 400%;
@@ -77,6 +70,7 @@ input[type="text"],
     box-shadow: 7px 7px 8px rgb(55, 98, 77);
 }
 
+/* Submit Button */
 .button {
     background-color: rgb(83, 141, 113);
 }

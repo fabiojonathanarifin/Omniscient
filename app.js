@@ -6,17 +6,17 @@ const mongoose = require('mongoose');
 const Prompt = require('./model/prompt')
 const { Configuration, OpenAIApi } = require("openai");
 
+//connecting to mongoDB
 mongoose.connect('mongodb://localhost:27017/textReply')
     .then(() => {
         console.log("Monggo connection open!")
     })
     .catch(err => {
-        console.log("Mongo connection error!")
         console.log(err)
     })
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
